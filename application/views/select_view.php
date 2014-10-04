@@ -56,10 +56,12 @@
                     echo $page;
                     else
                     echo $page+1; ?>">
-            下一頁</a></li>
-    
-        
+            下一頁</a></li>    
     </ul>
     </div>
+
+
+
+
 </body>
 </html>

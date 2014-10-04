@@ -10,16 +10,14 @@
     <link rel="stylesheet" href="///maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" />
 </head>
 
-</head>
-
 <body>
     <form class="bs-docs-example form-horizontal" 
-    action="/ci/index.php/login" method="POST">
+    action="/ci/index.php/checkout" method="POST">
         <div class="control-group">
             <label class="control-label" for="inputEmail">帳號</label>
             <div class="controls">
                 <input type="text" id="inputEmail" placeholder="帳號" 
-                name="account">
+                name="id">
             </div>
         </div>
         <div class="control-group">
@@ -35,6 +33,7 @@
                     <input type="checkbox">記住我
                 </label>
                 <button type="submit" class="btn">登入</button>
+                <button type="submit" class="btn">忘記密碼</button>
             </div>
         </div>
     </form>

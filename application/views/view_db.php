@@ -11,7 +11,7 @@
 	echo "<BR>"; 
 	foreach ($results as $key => $value) {
 		//Object 呼叫
-		echo $value->id. " ".$value->name."<BR>";
+		echo $value->id. " ".$value->psw."<BR>";
 		//Array 呼叫
 		//echo $value['id']. $value['name']."<BR>";
 	}

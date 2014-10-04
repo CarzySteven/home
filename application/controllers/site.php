@@ -4,7 +4,7 @@ class Site extends CI_Controller {
 
 	public function index(){
 		
-		$this->insertValues();
+		// $this->insertValues();
 		$this->getvalues();
 		// $this->About();
  	}
@@ -42,7 +42,7 @@ class Site extends CI_Controller {
 
 	function getvalues(){
 		$this->load->model("get_db");
-						echo "select ok";
+		echo "select ok";
 
 		$data['results']=$this->get_db->getAll();
 

@@ -2,9 +2,10 @@
 
 class Get_db extends CI_Model{
 	function getAll(){
-		$query= $this->db->query("SELECT * FROM test");
+		$query= $this->db->query("SELECT * FROM sign");
 		return $query->result();
 	}
+	
 
 	function insert1($data){
 		$this->db->insert("test",$data);

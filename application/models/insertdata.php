@@ -33,12 +33,6 @@ class Message_db extends CI_Model{
 		$this->db->insert_batch("message",$dataAry);
 
 	}
-	function insertregister($data){
-		$dataAry[] = $data;
-		$this->db->insert_batch("personal_information",$dataAry);
-
-	}
-
 	function update1($data){
 		$dataAry[] = $data;
 		$this->db->update("message",$dataAry,"id");
