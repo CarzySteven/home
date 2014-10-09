@@ -12,15 +12,19 @@ class checkitem extends CI_Controller {
 		$this->load->model("check");
 		$newRow = $_POST;
 		$data=$this->check->readitem($newRow);
+
 		if($data[0]->id == $newRow['id'])
+		{
 			echo "id Repeat";
 		if($data[0]->username == $newRow['username'])
 			echo "username Repeat";
 		if($data[0]->email == $newRow['email'])
 			echo "email Repeat";
-		// print_r($data[0]->id);
+		}
+		else
+		redirect('/index.php/login', 'location');
 
-		
+			
 	}
 
 }

@@ -8,11 +8,7 @@
 <body>
     
 <?php 
-    // print_r($dataAry); exit;
-    // print_r($datatotal);
-    // print_r($results);
-    // print_r($newRow);
-//print data 
+
     foreach ($dataAry as $key => $value) {
         //Object 呼叫
         echo "id = ". $value->id. " ".
