@@ -4,21 +4,26 @@
     print_r($_POST);
   }
 ?>
-<!-- <head>
-    <meta charset="UTF-8">
-    <title>Fire.app Demo</title>
-    <link rel="stylesheet" hraef="///maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" />
-</head> -->
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>book store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewportcontent="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" hraef="///maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" />
+
+    <!-- CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link href="<?php echo $this->config->base_url('assets/css/bootstrap-responsive.css');?>" type="text/css" rel="stylesheet" />
+    <!-- CSS -->
+
+
+
+    <!-- Le styles -->
     <style type="text/css">
       body {
         padding-top: 40px;
@@ -28,7 +33,7 @@
 
       .form-signin {
         max-width: 300px;
-        padding: 50px 70px 50px;
+        padding: 19px 29px 29px;
         margin: 0 auto 20px;
         background-color: #fff;
         border: 1px solid #e5e5e5;
@@ -52,7 +57,6 @@
       }
 
     </style>
-    <link href="/Content/bootstrap/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -72,21 +76,14 @@
     <div class="container">
 
         <form class="form-signin">
-        <form class="form-signin" action="/ci/index.php/checkout" method="POST">
-            <h1 class="form-signin-heading">Please sign in</h1>
-            
-            <input type="text" class="input-block-level" id="inputEmail" placeholder="帳號" name="id" maxlength="20">
-
-
-            <input type="password" class="input-block-level" id="inputPassword" placeholder="密碼" name="password" maxlength="20"> 
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <input type="text" class="input-block-level" placeholder="Email address">
+            <input type="password" class="input-block-level" placeholder="Password">
             <label class="checkbox">
-                <BR>
-            <input type="checkbox" value="remember-me">
+                <input type="checkbox" value="remember-me">
                 Remember me
-
             </label>
-            <BR>
-                <button type="submit" class="btn">登入</button>
+            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
         </form>
 
     </div>
@@ -95,13 +92,12 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/bundles/bootstrapSourceJS?v=XkouIldXq_pPzIiEbylJIGwgBv2qYDSef1Dnn06aIkQ1"></script>
+    <!--  <script src="/bundles/bootstrapSourceJS?v=XkouIldXq_pPzIiEbylJIGwgBv2qYDSef1Dnn06aIkQ1"></script> -->
 
 
+</body>
+</html>
 
-
-
-</body></html>
 
 
 
