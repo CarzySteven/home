@@ -5,7 +5,10 @@ class Get_db extends CI_Model{
 		$query= $this->db->query("SELECT * FROM sign");
 		return $query->result();
 	}
-	
+	function read()
+	{
+		$query = $this->db->query("SELECT * FROM Personal_Information");
+	}
 
 	function insert1($data){
 		$this->db->insert("test",$data);

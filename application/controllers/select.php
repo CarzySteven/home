@@ -2,87 +2,12 @@
 
 class select extends CI_Controller {
 
-	public function init_pagination($uri,$total_rows,$per_page=10,$segment=4){
-	       $ci                          =& get_instance();
-	       $config['per_page']          = $per_page;
-	       $config['uri_segment']       = $segment;
-	       $config['base_url']          = base_url().$uri;
-	       $config['total_rows']        = $total_rows;
-	       $config['use_page_numbers']  = TRUE;
-	 
-	       $ci->pagination->initialize($config);
-	       return $ci->pagination->create_links();    
-   } 
-
-
 	public function index(){
-		// $this->insertValues();
-		// echo "hello";
 		$this->getvalues();
-		// echo "hello getvalues";
 
  	}
 	
 	function getvalues(){
-
-	$this->load->library('pagination');
-
-	$config['base_url'] = 'http://localhost/ci/index.php/select/page/';
-	$config['uri_segment'] = 3;
-	// $config['use_page_numbers'] = TRUE;
-	$config['total_rows'] = 200;
-	$config['per_page'] = 20; 
-
-	$this->pagination->initialize($config); 
-
-	echo $this->pagination->create_links();
-	exit;
-
-	$this->load->library('pagination');
-	$this->load->helper('url');
-	$config['base_url'] = site_url('index.php/select');
-	$config['uri_segment'] = 3; 
-	echo $config['base_url'];
-	echo "<BR>";
-	// $config['total_rows'] = 400;
-	// $config['per_page'] = 20; 
-
-
-	// $config['uri_segment'] = 3;
-	// $config['next_link'] = '下一页';             
-	// $config['prev_link'] = '上一页';             
-	// $config['last_link'] = '末页';
-	// $config['first_link'] = '首页';
-
-	// $config['num_links'] = 4;
-
-	// $config['cur_page'] = $this->uri->segment(3); 
-
-	// $tab['table']=$this->mpage->get_books($config ['per_page'], $this->uri->segment(3));
-
-
-	// $this->pagination->initialize($config); 
-
-	// $offset=$this->url->segment(3);
-
-	// print_r($this->pagination->create_links());
-	echo $this->init_pagination('index.php/select',300);
-	// print_r($page->create_links());
-
-	exit;
-	// echo $this->init_pagination();
-       // $ci                          =& get_instance();
-       // $config['per_page']          = $per_page;
-       // $config['uri_segment']       = $segment;
-       // $config['base_url']          = base_url().$uri;
-       // $config['total_rows']        = $total_rows;
-       // $config['use_page_numbers']  = TRUE;
- 
-       // echo $ci->pagination->initialize($config);
-
-		echo "<BR>";
-
-
 
 		$this->load->model("message_db");
 		if(empty($_GET['page']))

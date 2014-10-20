@@ -266,13 +266,13 @@ to the controller you want to direct to will create the link. The function will 
 <p>The optional second parameter allows you to choose between the "location"
 method (default) or the "refresh" method.  Location is faster, but on Windows servers it can sometimes be a problem.  The optional third parameter allows you to send a specific HTTP Response Code - this could be used for example to create 301 redirects for search engine purposes. The default Response Code is 302. The third parameter is <em>only</em> available with 'location' redirects, and not 'refresh'. Examples:</p>
 
-<!-- <code>if ($logged_in == FALSE)<br />
+<code>if ($logged_in == FALSE)<br />
 {<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;redirect('/login/form/', 'refresh');<br />
 }<br />
 <br />
 // with 301 redirect<br />
-redirect('/article/13', 'location', 301);</code> -->
+redirect('/article/13', 'location', 301);</code>
 
 <p class="important"><strong>Note:</strong> In order for this function to work it must be used before anything is outputted
 to the browser since it utilizes server headers.<br />
