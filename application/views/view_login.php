@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<?php
-  if(!empty($_POST)){
-    print_r($_POST);
-  }
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +16,13 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link href="<?php echo $this->config->base_url('assets/css/bootstrap-responsive.css');?>" type="text/css" rel="stylesheet" />
     <link href="<?php echo $this->config->base_url('assets/css/bootstrap.css');?>" type="text/css" rel="stylesheet" />
-    
+
     <!-- CSS -->
 
 
 
     <!-- Le styles -->
-    <style type="text/css">
+   <style type="text/css">
       body {
         padding-top: 40px;
         padding-bottom: 40px;
@@ -58,22 +54,58 @@
         padding: 7px 9px;
       }
 
-    </style>
+</style>
 
 </head>
 
 <body>
-
+      
+    <script type="text/javascript">
+      function datanonEmpty(inputField, helpText , idcow) {
+        // See if the input value contains any text
+        if (inputField.value.length == 0) {
+          // The data is invalid, so set the help message
+          if (helpText != null)
+            helpText.innerHTML = '<font color="red">'+"<br>請輸入"+idcow;
+            
+          return false;
+        }
+        else {
+          // The data is OK, so clear the help message
+          if (helpText != null)
+            helpText.innerHTML = "";
+          return true;
+        }
+      } 
+    </script>
     <div class="container">
 
         
-            <form class="form-signin" action="/ci/index.php/confirm" method="POST">
+            <form class="form-signin" action="/ci/index.php/login" method="POST">
             <h2 class="form-signin-heading">Please sign in</h2>
             
-            <input type="text" class="input-block-level" placeholder="Email address" id="inputEmail" name="id" >
-            <input type="password" class="input-block-level" placeholder="Password" name="psw">                        
-            
-            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+            <div class="control-group">
+            <div class="controls">
+                <label class="control-label" for="inputEmail">帳號</label>
+                <input type="text" id="username" placeholder="帳號" name="id" 
+                onBlur="datanonEmpty(this,document.getElementById('id_help'),document.getElementById('username').placeholder);" />
+                <span id="id_help" class="help"></span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <label class="control-label" for="inputEmail">密碼</label>
+                <input type="text" id="password" placeholder="密碼" 
+                name="psw" onBlur="datanonEmpty(this,document.getElementById('psw_help'),document.getElementById('password').placeholder);" />
+                <span id="psw_help" class="help"></span>
+            </div>
+        </div>
+
+
+
+            <button class="btn btn-large btn-primary" type="submit" name="Reg">Sign in</button>
+
             <a class="btn btn-large btn-success" href="/ci/index.php/register">Register</a> 
 
         </form>

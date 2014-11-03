@@ -3,7 +3,7 @@
 class talkroom extends CI_Controller {
 
 	public function index(){
-	$this->load->view("insert_view");
+	$this->load->view("talkroom_view");
 
 		
  	}

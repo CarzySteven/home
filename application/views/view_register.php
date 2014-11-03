@@ -63,13 +63,38 @@
 </head>
 
 <body>
+    <script type="text/javascript">
+      function datanonEmpty(inputField, helpText) {
+        // See if the input value contains any text
+        if (inputField.value.length == 0) {
+          // The data is invalid, so set the help message
+          if (helpText != null)
+            helpText.innerHTML = "<br>Please enter a value.";
+          return false;
+        }
+        else {
+          // The data is OK, so clear the help message
+          if (helpText != null)
+            helpText.innerHTML = "";
+          return true;
+        }
+      }
+
+ 
+    </script>
+    
+
+
+
          <form class="form-signin" 
-        action="/ci/index.php/registerdata" method="POST">
+        action="/ci/index.php/register" method="GET">
 
         <div class="control-group">
             <div class="controls">
                 <label class="control-label" for="inputEmail">姓名</label>
-                <input type="text" id="inputEmail" placeholder="姓名" name="username">
+                <input type="text" id="inputEmail" placeholder="姓名" 
+                name="username" onBlur="datanonEmpty(this,document.getElementById('phone_help'));" />
+                <span id="phone_help" class="help"></span>
             </div>
         </div>
         <div class="control-group">

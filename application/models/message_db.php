@@ -2,7 +2,8 @@
 
 class Message_db extends CI_Model{
 	function getAll(){
-		$query= $this->db->query("SELECT * FROM message");
+		// $sql = "SELECT * FROM message"; 
+		// $query= $this->db->query($sql);
 		return $query->result();
 	}
 
@@ -12,10 +13,9 @@ class Message_db extends CI_Model{
 		return $query->result();
 	}	
 
-	function get($start,$per){ 
+	function get($sql){ 
 	//get select 該頁 資料。
-		$query= $this->db->query("SELECT * From message order by id limit 
-			$start,$per");
+		$query= $this->db->query($sql);
 		
 		// $query= $this->db->query("SELECT * From message order by id > ({$page}-1)*{$per} limit {$per} ");
 		//無法執行 不知道哪出問題？	
@@ -34,8 +34,8 @@ class Message_db extends CI_Model{
 
 	}
 	function insertregister($data){
-		$dataAry[] = $data;
-		$this->db->insert_batch("personal_information",$dataAry);
+		$dataAry[] = $data['newRow'];
+		$this->db->insert_batch("$data[sql]",$dataAry);
 
 	}
 
