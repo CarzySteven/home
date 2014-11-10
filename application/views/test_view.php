@@ -16,15 +16,48 @@
 	#main{
 		background-color: gray;
 		height: 500px;
+		display: none;
+
 	}
 	.guess_box{
 	height:245px;
 	}
 
+	#clickMe {
+	background: #D8B36E;
+	padding: 20px;
+	text-align: center;
+	width: 205px;
+	display: block;
+	border: 2px solid #000;
+	}
+
+	#picframe {
+	background: #D8B36E;
+	padding: 20px;
+	width: 205px;
+	display: none;
+	border: 2px solid #000;
+	}
+
+
+
 	</style>
      <script src="http://code.jquery.com/jquery.js"></script>
 </head>	
 <body>
+	<h1>test</h1>
+	<button>h1</button>
+	<div id="clickMe">Show me the the Furry Friend of the Day</div>
+		<div id="picframe">
+			<img src="<?php echo$this->config->base_url();?>assets/img/furry_friend.jpg"   />
+
+		</div>
+
+
+
+
+
 	<div id="header">
 		<h2>Jump for Joy Sale</h2>
 	</div>
@@ -44,6 +77,21 @@
 					$(this).append(discount_msg);
 				});
 			});
+			$(document).ready(function(){
+				$("#clickMe").click(function() {
+					$("img").fadeIn(1000);
+					$("#picframe").slideToggle("slow");
+					$(".guess_box").fadeIn(1000);
+					$("#main").slideToggle("slow");
+				
+				});
+			});
+			$(document).ready(function(){
+				$("button").click(function(){
+				$("h1").replaceWith("<h1>test2</h1>")			
+				})
+			})
+			
 	</script>
 </body>
 </html>
