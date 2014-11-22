@@ -6,13 +6,16 @@ class login extends CI_Controller {
 	$this->load->view("view_login");
 
 		if(!empty($_POST) ){
-			$this->load->model("read");
+			// $this->load->model("read");
 			$newRow = $_POST;
 			$this->load->helper('url');
-			$sql = "SELECT * FROM Personal_information WHERE id='$newRow[id]' AND psw='$newRow[psw]' ";
-			$data=$this->read->get($sql);
+			$data = $this->db->get_where('Personal_information', array('id' => '$newRow[id]','psw'=> '$newRow[psw]'));
+			// 此ＳＱＬ會引發資料隱碼攻擊 
+			// $sql = "SELECT * FROM Personal_information WHERE id='$newRow[id]' AND psw='$newRow[psw]' ";
+			// $data=$this->read->get($sql);
+			
 				if(!empty($data)){
-		        $_SESSION['username'] = $data[0]->id;//session 記錄
+		        $_SESSION['username'] = $_POST['id'];//session 記錄
 		        redirect('main', 'location');//登入成功。
 				}	
 		}	
