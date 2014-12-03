@@ -16,7 +16,8 @@ class read extends CI_Model{
 
 	 // foreach ($allowFields as $key) {
   //           if (array_key_exists($key, $modifyInfo)) {
-  //               $sqlStrAry[] = "$key = ?";
+  // 不允許的值，則設定 $key =?
+  //               $sqlStrAry[] = "$key = ?"; 
   //               $bindAry[] = $modifyInfo[$key];
   //           }
   //       }
